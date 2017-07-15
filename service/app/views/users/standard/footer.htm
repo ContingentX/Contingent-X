@@ -1,0 +1,182 @@
+<a href="#top" data-uk-smooth-scroll="{offset: 90}">Top</a>
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--<script src="app/assets/js/f3sample.js"></script>-->
+
+
+<!-- TIME 2 - TimeClock -->
+<script type="text/javascript" src="app/assets/js/jquery.countdown.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var endDate = "{{ @data }}";
+
+        $('.countdown.simple').countdown({
+            date: endDate,
+            onEnd: function () {
+                $(this.el).addClass('ended');
+            }
+        });
+
+        $('.countdown2.styled').countdown({
+            date: endDate,
+            render: function (data) {
+                $(this.el).html(
+                        "<div id='c'>" + this.leadingZeros(data.years, 4) + " <span>Jahre</span></div>" +
+                        "<div id='c'>" + this.leadingZeros(data.days, 3) + " <span>Tage</span></div>" +
+                        "<div id='c'>" + this.leadingZeros(data.hours, 2) + " <span>Std</span></div>" +
+                        "<div id='c'>" + this.leadingZeros(data.min, 2) + " <span>Min</span></div>" +
+                        "<div id='c'>" + this.leadingZeros(data.sec, 2) + " <span>Sek</span></div>"
+                );
+            },
+            onEnd: function () {
+                $(this.el).addClass('die');
+                $('.info').addClass('info-one');
+                $('.background').addClass('down');
+
+
+                $('.time1').addClass('none');
+                $('.contis').addClass('none');
+            }
+        });
+
+        $('.countdown.callback').countdown({
+            date: +(new Date) + 10000,
+            render: function (data) {
+                $(this.el).text(this.leadingZeros(data.sec, 2) + " sec");
+            },
+            onEnd: function () {
+                $(this.el).addClass('ended');
+            }
+        }).on("click", function () {
+            $(this).removeClass('ended').data('countdown').update(+(new Date) + 10000).start();
+        });
+
+        // End time for diff purposes
+        var endTimeDiff = new Date().getTime() + 15000;
+        // This is server's time
+        var timeThere = new Date();
+        // This is client's time (delayed)
+        var timeHere = new Date(timeThere.getTime() - 5434);
+        // Get the difference between client time and server time
+        var diff_ms = timeHere.getTime() - timeThere.getTime();
+        // Get the rounded difference in seconds
+        var diff_s = diff_ms / 1000 | 0;
+
+        var notice = [];
+        notice.push('Server time: ' + timeThere.toDateString() + ' ' + timeThere.toTimeString());
+        notice.push('Your time: ' + timeHere.toDateString() + ' ' + timeHere.toTimeString());
+        notice.push('Time difference: ' + diff_s + ' seconds (' + diff_ms + ' milliseconds to be precise). Your time is a bit behind.');
+
+        $('.offset-notice').html(notice.join('<br />'));
+
+        $('.offset-server .countdown').countdown({
+            date: endTimeDiff,
+            offset: diff_s * 1000,
+            onEnd: function () {
+                $(this.el).addClass('ended');
+            }
+        });
+
+        $('.offset-client .countdown').countdown({
+            date: endTimeDiff,
+            onEnd: function () {
+                $(this.el).addClass('ended');
+            }
+        });
+
+    });
+</script>
+
+
+<!-- TIME 1 - Circular -->
+<script type="text/javascript" src="app/assets/js/jquery.circular-countdown.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".countdown").circularCountdown({
+            startDate: "{{ @startDate }}",
+            endDate: "{{ @endDate }}", // 2016/12/25 12:30:00
+            timeZone: 2,	//Time zone of New York. Find timezone of your location and write here.
+
+
+            //Margin between circles
+            margin: 0, //25px -186px
+
+            //Diameters
+            dayDiameter: 200,
+            hourDiameter: 150,
+            minuteDiameter: 100,
+            secondDiameter: 50,
+
+            //Circle BG width
+            dayBgWidth: 7,
+            hourBgWidth: 6,
+            minuteBgWidth: 5,
+            secondBgWidth: 4,
+
+            //Circle width
+            dayCircleWidth: 7,
+            hourCircleWidth: 6,
+            minuteCircleWidth: 5,
+            secondCircleWidth: 4,
+
+            //Circle bg
+            dayBgColor: "rgba(255, 255, 255, 0.00)",
+            hourBgColor: "rgba(99, 40, 177, 0.00)",
+            minuteBgColor: "rgba(99, 40, 177, 0.00)",
+            secondBgColor: "rgba(99, 40, 177, 0.00)",
+
+            //Circle color
+            dayCircleColor: "rgba(255, 255, 255, 0.90)",
+            hourCircleColor: "rgba(255, 255, 255, 0.90)",
+            minuteCircleColor: "rgba(255, 255, 255, 0.90)",
+            secondCircleColor: "rgba(255, 255, 255, 0.90)",
+
+            //Counter font size
+            dayCounterFontSize: 0,
+            hourCounterFontSize: 0,
+            minuteCounterFontSize: 0,
+            secondCounterFontSize: 0,
+
+            //Texts
+            dayText: "",
+            hourText: "",
+            minuteText: "",
+            secondText: "",
+
+            //Texts top margin
+            dayTextMarginTop: 1,
+            hourTextMarginTop: 1,
+            minuteTextMarginTop: 1,
+            secondTextMarginTop: 1
+        });
+    });
+</script>
+
+<!-- UIKIT -->
+<script type="text/javascript" src="app/assets/js/uikit.js"></script>
+<script type="text/javascript" src="app/assets/js/core/scrollspy.min.js"></script>
+
+<!-- TEST CACHE -->
+<script>
+    /*Lade App cache neu*/
+    window.addEventListener('load', function (e) {
+        window.applicationCache.addEventListener('updateready', function (e) {
+            if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+                // Browser downloaded a new app cache.
+                // Swap it in and reload the page to get the new hotness.
+                window.applicationCache.swapCache();
+                if (confirm('ContingentX wurde aktualisiert! Jetzt neu laden?')) {
+                    window.location.reload();
+                }
+            } else {
+                // Manifest didn't changed. Nothing new to server.
+            }
+        }, false);
+    }, false);
+</script>
+
+
+<script>
+
+</script>
+</body>
+</html>

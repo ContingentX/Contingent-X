@@ -1,0 +1,135 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header">
+        <check if="{{ @_rights == 'admins' }}">
+            <true>Alle Nutzer</true>
+            <false>Meine Nutzerdaten</false>
+        </check>
+    </h1>
+
+    <h4 class="sub-header">Meine Daten (Sie sind:
+        <check if="{{ @_rights == 'admins' or @_rights == 'viewer' }}">
+            <true>Admin)</true>
+            <false>User)</false>
+        </check>
+    </h4>
+    <p>E-Mail: <input value="{{ @myName }}"/></p>
+
+    <p>Passwort: <input value="{{ @myPassword }}"/></p>
+
+    <p>ID: <input value="{{ @myID }}"/></p>
+
+
+    <br>
+
+
+    <check if="{{ @_rights=='admins' or @_rights == 'viewer' }}">
+        <!--admin-->
+        <h4 class="sub-header">Alle Benutzer </h4>
+
+        <div class="table-responsive">
+
+            <h5>Admins</h5>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Vorname</th>
+                    <th>Nachname</th>
+                    <th>Mail</th>
+                    <check if="{{ @_rights=='admins' }}">
+                        <th>Gruppe</th>
+                        <th>Contingent</th>
+                    </check>
+                </tr>
+                </thead>
+                <tbody>
+                <repeat group="{{ @users }}" value="{{ @user }}">
+                    <check if="{{ @user.group=='admins' }}">
+                        <tr>
+                            <td>{{ @user.id }}</td>
+                            <td>{{ @user.name }}</td>
+                            <td>{{ @user.subname }}</td>
+                            <td>{{ @user.username }}</td>
+                            <check if="{{ @_rights=='admins' }}">
+                                <td>{{ @user.group }}</td>
+                                <td>{{ @user.time }}</td>
+                            </check>
+                        </tr>
+                    </check>
+                </repeat>
+                </tbody>
+            </table>
+
+
+            <h5>Viewer</h5>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Vorname</th>
+                    <th>Nachname</th>
+                    <th>Mail</th>
+                    <check if="{{ @_rights=='admins' }}">
+                        <th>Gruppe</th>
+                        <th>Contingent</th>
+                    </check>
+                </tr>
+                </thead>
+                <tbody>
+                <repeat group="{{ @users }}" value="{{ @user }}">
+                    <check if="{{ @user.group=='viewer' }}">
+                        <tr>
+                            <td>{{ @user.id }}</td>
+                            <td>{{ @user.name }}</td>
+                            <td>{{ @user.subname }}</td>
+                            <td>{{ @user.username }}</td>
+                            <check if="{{ @_rights=='admins' }}">
+                                <td>{{ @user.group }}</td>
+                                <td>{{ @user.time }}</td>
+                            </check>
+                        </tr>
+                    </check>
+                </repeat>
+                </tbody>
+            </table>
+
+
+            <h5>User</h5>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Vorname</th>
+                    <th>Nachname</th>
+                    <th>Mail</th>
+                    <check if="{{ @_rights=='admins' }}">
+                        <th>Gruppe</th>
+                        <th>Contingent</th>
+                    </check>
+                </tr>
+                </thead>
+                <tbody>
+                <repeat group="{{ @users }}" value="{{ @user }}">
+                    <check if="{{ @user.group=='' }}">
+                        <tr>
+                            <td>{{ @user.id }}</td>
+                            <td>{{ @user.name }}</td>
+                            <td>{{ @user.subname }}</td>
+                            <td>{{ @user.username }}</td>
+                            <check if="{{ @_rights=='admins' }}">
+                                <td>{{ @user.group }}</td>
+                                <td>{{ @user.time }}</td>
+                            </check>
+                        </tr>
+                    </check>
+                </repeat>
+                </tbody>
+            </table>
+
+
+        </div>
+        <!--//admin-->
+
+    </check>
+
+</div>

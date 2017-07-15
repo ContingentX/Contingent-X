@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<title>Circular Countdown jQuery Plugin</title>
+
+		<link rel="shortcut icon" href="images/preview/favicon.ico" />
+
+		<!-- CSS style -->
+		<link rel="stylesheet" type="text/css" href="css/preview.css" />
+
+		<!-- Google fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600' rel='stylesheet' type='text/css'>
+
+		<!-- jQuery -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+
+		<!--[if lt IE 9]>
+			<script type="text/javascript">
+				document.createElement("header");
+				document.createElement("nav");
+			</script>
+		<![endif]-->
+
+		<!-- Circular Countdown CSS settings -->
+		<link rel="stylesheet" type="text/css" href="css/circular-countdown.css" />
+
+		<!-- Circular Countdown JS -->
+		<script type="text/javascript" src="js/jquery.circular-countdown.js"></script>
+
+		<!-- Create Circular Countdown Timer -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".countdown").circularCountdown({
+					startDate:"2014/08/01 12:30:00",
+					endDate:"2016/12/25 12:30:00",
+					timeZone:-5,	//Time zone of New York. Find timezone of your location and write here.
+
+					//Margin between circles
+					margin:0, //25px -186px
+
+					//Diameters
+					dayDiameter:200,
+					hourDiameter:150,
+					minuteDiameter:100,
+					secondDiameter:50,
+
+					//Circle BG width
+					dayBgWidth:7,
+					hourBgWidth:6,
+					minuteBgWidth:5,
+					secondBgWidth:4,
+
+					//Circle width
+					dayCircleWidth:7,
+					hourCircleWidth:6,
+					minuteCircleWidth:5,
+					secondCircleWidth:4,
+
+					//Circle bg
+					dayBgColor:"rgba(0, 0, 0, 0.20)",
+					hourBgColor:"rgba(0, 0, 0, 0.20)",
+					minuteBgColor:"rgba(0, 0, 0, 0.20)",
+					secondBgColor:"rgba(0, 0, 0, 0.20)",
+
+					//Circle color
+					dayCircleColor:"#fff",
+					hourCircleColor:"#fff",
+					minuteCircleColor:"#fff",
+					secondCircleColor:"#fff",
+
+					//Counter font size
+					dayCounterFontSize:0,
+					hourCounterFontSize:0,
+					minuteCounterFontSize:0,
+					secondCounterFontSize:0,
+
+
+
+					//Texts
+
+					dayText:"",
+					hourText:"",
+					minuteText:"",
+					secondText:"",
+
+					//Texts top margin
+					dayTextMarginTop:1,
+					hourTextMarginTop:1,
+					minuteTextMarginTop:1,
+					secondTextMarginTop:1
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+
+		<!-- Border -->
+		<div class="gray-border"></div>
+		<div class="pink-border"></div>
+
+		<!-- Header -->
+		<header>
+			<div class="container clearfix">
+				<div class="logo"><img src="images/preview/logo.png" /></div>
+				<nav class="menu">
+					<ul>
+						<li><a href="index.html">PINK</a></li>
+						<li><a href="blue.html">BLUE</a></li>
+						<li><a href="multicolor.html">MULTICOLOR</a></li>
+						<li class="active"><a href="multisize.html">MULTISIZE</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<!-- Preview -->
+		<div class="dark-wrapper multisize">
+			<div class="inner clearfix">
+
+				<!--
+				############################################
+				    - Circular Countdown jQuery Plugin -
+				############################################
+				-->
+                <div class="countdown"></div>
+
+			</div>
+		</div>
+
+
+	</body>
+
+</html>

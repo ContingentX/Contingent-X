@@ -1,0 +1,65 @@
+CACHE MANIFEST
+# Mehr infos gibt es auf:
+# http://www.html5rocks.com/de/tutorials/appcache/beginner/
+
+CACHE:
+# Dies ist der Standardabschnitt für Einträge. Unter diesem Header oder direkt nach >CACHE MANIFEST<
+# aufgeführte Dateien werden nach dem ersten Herunterladen explizit im Cache gespeichert.
+
+#------------------------------------------- CSS ----------------------------------------------
+
+app/assets/css/uikit.css
+app/views/users/skins/skin-standard.css
+app/views/users/skins/skin-blue.css
+app/views/users/skins/skin-green.css
+
+#----------------------------------------- Images ---------------------------------------------
+
+app/assets/img/favicon.ico
+app/assets/img/bg3.png
+app/assets/img/riffed.png
+
+#------------------------------------------- JS -----------------------------------------------
+
+app/assets/cache/jquery.min.2.2.0.js
+app/assets/cache/preview.js
+app/assets/js/uikit.js
+app/assets/js/jquery.circular-countdown.js
+app/assets/js/jquery.countdown.js
+app/assets/js/f3sample.js
+
+#----------------------------------------- Fonts ----------------------------------------------
+
+app/assets/fonts/Segment7Standard.otf
+app/assets/fonts/fontawesome-webfont.ttf
+app/assets/fonts/fontawesome-webfont.woff
+app/assets/fonts/fontawesome-webfont.woff2
+
+
+
+NETWORK:
+# Unter diesem Header aufgeführte Dateien sind Ressourcen, die in der weißen Liste aufgeführt
+# sind und für die eine Verbindung zum Server erforderlich ist. Bei allen Anfragen an diese Ressourcen wird
+# der Cache umgangen, selbst wenn der Nutzer offline ist. Es müssen Platzhalter verwendet werden.
+
+#login.php
+#/login
+#http://api.twitter.com
+http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js
+http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js
+/api/user/times
+
+
+
+
+
+FALLBACK:
+# Ein optionaler Abschnitt, in dem Fallback-Seiten angegeben sind für den Fall, dass auf eine Ressource
+# nicht zugegriffen werden kann. Die erste URI ist die Ressource, die zweite das Fallback. Beide URIs müssen
+# relativ sein und denselben Ursprung haben wie die Manifest-Datei. Es müssen Platzhalter verwendet werden.
+
+#/main.py /static.html
+#images/large/ images/offline.jpg
+#*.html /offline.html
+
+app/assets/img/online.png app/assets/img/offline.png

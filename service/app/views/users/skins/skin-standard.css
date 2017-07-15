@@ -1,0 +1,356 @@
+body, html {
+    background: #2A203A !important;
+}
+
+@font-face {
+    font-family: 'Segment7Standard';
+    src: url('/app/assets/fonts/Segment7Standard.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+.none {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a.text-glim {
+    color: rgba(255, 255, 255, 0.83) !important;
+    text-shadow: -1px 1px 13px rgba(180, 0, 255, 0.84);
+    background: rgba(86, 0, 191, 0.17);
+    text-decoration: none;
+    font-weight: 100;
+}
+
+a.text-glim:hover {
+    color: #fff !important;
+    text-shadow: -1px 1px 13px rgb(255, 0, 247);
+    background: rgba(86, 0, 191, 0.17);
+    text-decoration: none;
+}
+
+a.text-glim2 {
+    color: rgba(255, 255, 255, 0.39) !important;
+    text-shadow: -1px 1px 13px rgba(180, 0, 255, 0.39);
+}
+
+a.text-glim2:hover {
+    color: rgba(255, 255, 255, 0.69) !important;
+    text-shadow: -1px 1px 13px rgba(180, 0, 255, 0.49);
+}
+
+.uk-navbar-nav > li.uk-active > a {
+    background-color: #1E112F;
+}
+
+.uk-navbar {
+    background: #141125 !important;
+}
+
+/*TIME 1*/
+.time1 {
+    background-position: center center;
+
+    background: url('/app/assets/img/bg3.png') #150b2a;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.t1 {
+    background: url('/app/assets/img/riffed.png');
+    padding: 10px;
+}
+
+.time {
+    border-radius: 50%;
+    box-shadow: 0 0 100px rgba(122, 43, 165, 0.62);
+}
+
+.day.time div.count,
+.hour.time div.count,
+.minute.time div.count,
+.second.time div.count {
+    -moz-box-shadow: inset -7px 2px 43px 1px rgba(89, 50, 99, 0.21);
+    -webkit-box-shadow: inset -7px 2px 43px 1px rgba(89, 50, 99, 0.21);
+    box-shadow: inset -7px 2px 43px 1px rgba(89, 50, 99, 0.21); /*rgba(238, 238, 239, 0.05);*/
+    border-radius: 50%;
+    padding: 41px;
+    margin-top: -60px;
+    position: absolute;
+    left: -170px;
+}
+
+/*TIME 1: INFO*/
+
+.circular-countdown * {
+    margin: 0;
+    padding: 0
+}
+
+.circular-countdown .time {
+    position: relative;
+    float: left
+}
+
+.circular-countdown canvas.bg {
+    position: absolute;
+    z-index: 1
+}
+
+.circular-countdown canvas.circle {
+    position: relative;
+    z-index: 2
+}
+
+.circular-countdown .count {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: #333;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 30px
+}
+
+.circular-countdown .text {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: #5f5f5f;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px
+}
+
+.info {
+    display: none;
+}
+
+.info.info-one h2 {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.info.info-one {
+    display: block;
+    text-align: center;
+
+    padding: 12px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    color: rgba(255, 255, 255, 0.48);
+    text-shadow: -1px 1px 13px rgba(180, 0, 255, 0.84);
+
+    background: rgba(86, 0, 191, 0.17);
+    border: 1px solid rgba(98, 0, 255, 0.88);
+    box-shadow: 0 0 9px rgba(216, 0, 255, 0.78);
+
+}
+
+/* TIME 2 */
+/*tot*/
+.styled.die div#c {
+    color: rgba(154, 154, 154, 0.48);
+    text-shadow: 0px 0px 6px rgba(58, 58, 58, 0.73);
+    /*font-size: 3em;*/
+}
+
+.styled.die div#c span {
+    color: rgba(105, 105, 105, 0.49);
+    border-top: none;
+    text-shadow: none;
+}
+
+.background {
+    background: rgb(40, 18, 54);
+}
+
+.background.down {
+    background: url('/app/assets/img/riffed.png') #281236; /*#3d144b;*/
+}
+
+@media (min-width: 300px) {
+    .styled.die div#c {
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 600px) {
+    .styled.die div#c {
+        /*font-size: 70px;*/
+    }
+}
+
+.styled {
+    padding: 20px;
+}
+
+.styled div#c {
+    font-family: "Segment7Standard";
+    color: rgba(255, 244, 253, 0.83);
+    text-shadow: 0 0 30px rgba(160, 69, 216, 0.76);
+}
+
+.styled div#c span {
+    color: rgba(245, 240, 247, 0.44);
+    text-shadow: -1px 1px 13px rgba(79, 12, 216, 0.76);
+}
+
+.styled div {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 25px;
+    font-weight: 100;
+    line-height: 1;
+    text-align: right;
+}
+
+/* IE7 inline-block hack */
+* + html .styled div {
+    display: inline;
+    zoom: 1;
+}
+
+.styled div:first-child {
+    margin-left: 0;
+}
+
+.styled div span {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    border-top: 1px solid rgba(124, 124, 124, 0.47);
+    padding-top: 3px;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.hour.time {
+    margin: 25px -175px 0px !important;
+}
+
+.minute.time {
+    margin: 50px -150px 0px !important;
+}
+
+.second.time {
+    margin: 75px -125px 0px !important;
+}
+
+/* contingents */
+.conti-box {
+    color: rgba(148, 110, 208, 0.8);
+    text-shadow: -1px 1px 13px rgba(180, 0, 255, 0.84);
+    text-align: center;
+    font-size: 12px;
+    background: url('/app/assets/img/riffed.png') rgba(86, 0, 191, 0.17);
+    border: 1px solid rgba(98, 0, 255, 0.88);
+    box-shadow: 0 0 9px rgba(216, 0, 255, 0.78);
+    padding: 5px;
+}
+
+.conti-box:hover {
+    text-align: center;
+    font-size: 12px;
+    padding: 5px;
+    color: rgba(255, 255, 255, 0.78);
+    /*
+    text-shadow: -1px 1px 13px rgba(217, 0, 255, 0.84);
+    background: url('/app/assets/img/riffed.png') rgba(86, 0, 191, 0.24);
+    border: 1px solid rgba(112, 0, 255, 0.91);
+    box-shadow: 0 0 9px rgba(252, 0, 255, 0.78);
+    */
+
+    text-shadow: -1px 1px 13px rgba(251, 0, 255, 0.92);
+    background: url('/app/assets/img/riffed.png') rgba(69, 2, 97, 0.81);
+    border: 1px solid rgba(145, 0, 255, 0.91);
+    box-shadow: 0 0 17px rgba(255, 0, 224, 0.74);
+}
+
+
+.conti-box h2 {
+    font-size: 40px;
+    margin-top: 5px;
+    margin-bottom: 50px;
+    color: rgba(232, 211, 247, 0.67);
+    text-shadow: -1px 1px 13px rgba(138, 15, 244, 0.96);
+}
+.conti-box:hover h2 {
+    font-size: 40px;
+    margin-top: 5px;
+    margin-bottom: 50px;
+    color: rgba(232, 211, 247, 0.67);
+    text-shadow: -1px 1px 13px rgba(217, 0, 255, 0.84);
+}
+
+.conti-button-glim {
+    padding: 10px 40%;
+    border: 1px solid rgba(91, 3, 233, 0.32);
+    color: rgba(224, 186, 251, 0.16);
+    box-shadow: 0 0 7px rgba(219, 10, 232, 0.18);
+}
+
+.conti-button-glim:hover,
+.conti-box:hover ~ .uk-grid .conti-button-glim a,
+.conti-box:hover ~ .uk-grid .conti-button-glim,
+.conti-button-glim:focus,
+.conti-box:focus ~ .uk-grid .conti-button-glim a,
+.conti-box:focus ~ .uk-grid .conti-button-glim{
+    padding: 10px 40%;
+    /*border: 1px solid #5B03E9;
+    background: rgba(76, 29, 160, 0.38);
+    box-shadow: 0 0 7px rgba(233, 10, 246, 0.69);
+    text-shadow: 0 0 7px rgba(198, 3, 233, 0.87);*/
+    color: rgba(224, 186, 251, 0.77);
+
+    text-shadow: -1px 1px 13px rgba(251, 0, 255, 0.92);
+    background: rgba(69, 2, 97, 0.81);
+    border: 1px solid rgba(145, 0, 255, 0.91);
+    box-shadow: 0 0 23px rgba(255, 0, 224, 0.74);
+}
+
+.conti-heading {
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+    color:rgba(255, 255, 255, 0.91);
+
+    text-shadow: -1px 1px 13px rgba(255, 0, 235, 0.7);
+    background: url('/app/assets/img/riffed.png') rgba(95, 0, 144, 0.38);
+    border: 1px solid rgba(171, 0, 255, 0.88);
+    box-shadow: 0 0 9px rgba(103, 0, 255, 0.9);
+
+}
+
+.conti-left {
+    float: left;
+    border-radius: 0 20px 0 0;
+}
+
+.conti-right {
+    float: right;
+    border-radius: 20px 0 0 0;
+}

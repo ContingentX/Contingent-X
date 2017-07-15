@@ -1,0 +1,209 @@
+body, html {
+    background: #163a24 !important;
+}
+
+.none {display:none;}
+
+a.text-glim {
+    color: rgba(255, 255, 255, 0.83) !important;
+    text-shadow: -1px 1px 13px rgba(54, 255, 0, 0.84);
+    background: rgba(0, 191, 88, 0.17);
+    text-decoration: none;
+    font-weight: 100;
+}
+
+a.text-glim:hover {
+    color: #fff !important;
+    text-shadow: -1px 1px 13px rgb(0, 255, 74);
+    background: rgba(5, 191, 0, 0.17);
+    text-decoration: none;
+}
+
+a.text-glim2 {
+    color: rgba(255, 255, 255, 0.39) !important;
+    text-shadow: -1px 1px 13px rgba(0, 255, 70, 0.39);
+}
+
+a.text-glim2:hover {
+    color: rgba(255, 255, 255, 0.69) !important;
+    text-shadow: -1px 1px 13px rgba(0, 255, 72, 0.49);
+}
+
+.uk-navbar-nav > li.uk-active > a {
+    background-color: #112F15;
+}
+
+.uk-navbar {
+    background: #102613 !important;
+}
+
+
+
+
+/*TIME 1*/
+.time1 {
+    background-position: center center;
+
+    background: url('/app/assets/img/bg3.png') #2F5002;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.t1 {
+    background: url('/app/assets/img/riffed.png');
+    padding: 10px;
+}
+
+.time {
+    border-radius: 50%;
+    box-shadow: 0 0 100px rgba(28, 165, 49, 0.62);
+}
+
+.day.time div.count,
+.hour.time div.count,
+.minute.time div.count,
+.second.time div.count {
+    -moz-box-shadow: inset -7px 2px 43px 1px rgba(61, 54, 99, 0.21);
+    -webkit-box-shadow: inset -7px 2px 43px 1px rgba(61, 54, 99, 0.21);
+    box-shadow: inset -7px 2px 43px 1px rgba(61, 54, 99, 0.21); /*rgba(238, 238, 239, 0.05);*/
+    border-radius: 50%;
+    padding: 41px;
+    margin-top: -60px;
+    position: absolute;
+    left: -170px;
+}
+
+/*TIME 1: INFO*/
+.info {
+    display: none;
+}
+.info.info-one h2 {
+    color: rgba(255, 255, 255, 0.75);
+}
+.info.info-one {
+    display: block;
+    text-align: center;
+
+    padding: 12px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    color: rgba(255, 255, 255, 0.48);
+    text-shadow: -1px 1px 13px rgba(0, 255, 50, 0.84);
+
+    background: rgba(0, 191, 42, 0.17);
+    border: 1px solid rgba(0, 255, 36, 0.88);
+    box-shadow: 0 0 9px rgba(68, 255, 2, 0.78);
+
+}
+
+/* TIME 2 */
+/*tot*/
+.styled.die div#c {
+    color: rgba(154, 154, 154, 0.48);
+    text-shadow: 0px 0px 6px rgba(58, 58, 58, 0.73);
+    /*font-size: 3em;*/
+}
+
+.styled.die div#c span {
+    color: rgba(105, 105, 105, 0.49);
+    border-top: none;
+    text-shadow: none;
+}
+
+.background {
+    background: #0d3617;
+}
+
+.background.down {
+    background: url('/app/assets/img/riffed.png') #113610; /*#3d144b;*/
+}
+
+@media (min-width: 300px) {
+    .styled.die div#c {
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 600px) {
+    .styled.die div#c {
+        /*font-size: 70px;*/
+    }
+}
+
+.styled {
+    padding: 20px;
+}
+
+.styled div#c {
+    font-family: "Segment7Standard";
+    color: rgba(255, 244, 253, 0.83);
+    text-shadow: 0 0 30px rgba(73, 216, 53, 0.76);
+}
+
+.styled div#c span {
+    color: rgba(245, 240, 247, 0.44);
+    text-shadow: -1px 1px 13px rgba(23, 216, 13, 0.76);
+}
+
+.styled div {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 25px;
+    font-weight: 100;
+    line-height: 1;
+    text-align: right;
+}
+
+/* IE7 inline-block hack */
+* + html .styled div {
+    display: inline;
+    zoom: 1;
+}
+
+.styled div:first-child {
+    margin-left: 0;
+}
+
+.styled div span {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    border-top: 1px solid rgba(124, 124, 124, 0.47);
+    padding-top: 3px;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.hour.time {
+    margin: 25px -175px 0px !important;
+}
+
+.minute.time {
+    margin: 50px -150px 0px !important;
+}
+
+.second.time {
+    margin: 75px -125px 0px !important;
+}
+
+/* contingents */
+.conti-box {
+    color: rgba(255, 255, 255, 0.78);
+    text-shadow: -1px 1px 13px rgba(3, 255, 7, 0.84);
+    text-align: center;
+    font-size: 12px;
+    background: url('/app/assets/img/riffed.png') rgba(1, 191, 0, 0.17);
+    border: 1px solid rgba(6, 255, 38, 0.88);
+    box-shadow: 0 0 9px rgba(9, 255, 112, 0.78);
+    padding: 5px;
+}
+
+.conti-box h2 {
+    font-size: 40px;
+    margin-top: 5px;
+    color: rgba(1, 191, 0, 0.67);
+    text-shadow: -1px 1px 13px rgba(15, 216, 64, 0.96);
+}

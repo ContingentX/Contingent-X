@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		
+		<title>Circular Countdown jQuery Plugin - Help Documentation</title>
+		
+		<!-- CSS style -->
+		<link rel="shortcut icon" href="assets/images/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="assets/css/global.css" />
+		<link rel="stylesheet" type="text/css" href="assets/js/google-code-prettify/prettify.css" />
+		
+		<!-- jQuery -->
+		<script type="text/javascript" src="assets/js/jquery.js"></script>
+		<script type="text/javascript" src="assets/js/globals.js"></script>
+		<script type="text/javascript" src="assets/js/google-code-prettify/prettify.js"></script>
+	</head>
+	<body>
+	
+		<!-- Header -->
+		<header>
+			<div class="container clearfix">
+				<div class="flashblue">
+					<a href="http://www.codegrape.com/user/flashblue"><img src="assets/images/flashblue.png" width="50" height="50" alt="FlashBlue" title="FlashBlue" /></a>
+				</div>
+				<div class="align-left">
+					<div class="logo">Circular Countdown jQuery Plugin</div>
+					<div class="slogan">jQuery framework used countdown-countup timer.</div>
+				</div>
+			</div>
+		</header>
+		
+		<!-- Container -->
+		<div class="container">	
+			<div class="author">
+				<div class="left">
+					<p>
+						Created: 11/07/2013<br />
+						By: <a href="http://www.codegrape.com/user/flashblue/portfolio">FlashBlue</a><br />
+						Profile: <a href="http://www.codegrape.com/user/flashblue">www.codegrape.com/user/flashblue</a><br />
+						Website: <a href="http://www.flashbluedesign.com/">www.flashbluedesign.com</a><br />
+						E-mail: <a href="mailto:flashblue80@hotmail.com">flashblue80@hotmail.com</a><br />
+						Twitter: <a href="http://twitter.com/flashblue80">twitter.com/flashblue80</a>						 
+					</p>
+				</div>
+				<div class="right">
+					<p>Thank you for purchasing our component. If you have any questions that are beyond the scope of this help file, please feel free to email via our <a href="mailto:flashblue80@hotmail.com">email</a>. Thanks so much!</p>
+				</div>
+			</div>
+			<p>&nbsp;</p>
+			
+			<h2 class="alt">Table of Contents</h2>
+			<ol class="alpha">
+				<li><a href="#directories">Directories</a></li>
+				<li><a href="#font">Font Used</a></li>
+				<li><a href="#installation">Installation</a></li>
+				<li><a href="#parameter">Plugin Parameters</a></li>							
+			</ol>
+			
+			<hr />
+			<h3 id="directories">A) Directories</h3>
+			<p>
+				<b>source</b> - Original source files other files are part of the source, you do not need to upload any of these to your server. Use these to change the code or style.
+			</p>
+			<p>
+				<b>deploy</b> – Published files  for adding item to the site.
+				These are the files you need to <span class="note">upload to your server</span>.
+			</p>
+			<p><b>help</b> – Help file (HTML)</p>
+			
+			<hr />
+			<h3 id="font">B) Font Used</h3>
+			<p><strong>Open Sans</strong> (You can download it here as free: <a href="http://www.fontsquirrel.com/fonts/open-sans" target="_blank">http://www.fontsquirrel.com/fonts/open-sans</a>)</p>
+			<p>You can change font from CSS file.</p>
+			
+			<hr />
+			<h3 id="installation">B) Installation</h3>
+			<p>Installing the countdown timer requires the following steps.</p>
+			<ol>
+				<li>Including the css file.</li>
+				<li>Including the javascript files.</li>
+				<li>Specifying the html tags of the timer within your page.</li>
+				<li>Instantiating a javascript function call with any optional parameters.</li>
+			</ol>	
+			<p>Below describes these steps in more detail.</p>
+			<p>In step 1, to include css files, simply specify the following lines of code within your <em>&lt;head&gt;</em> tag:</p>
+			<pre class="prettyprint lang-html linenums">
+&lt;link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600' rel='stylesheet' type='text/css'&gt;
+&lt;link rel="stylesheet" type="text/css" href="circular-countdown.css"/&gt;
+</pre>		
+			<p>In step 2, you will need to include the jquery's library files, and the timer's file <strong>jquery.circular-countdown.js</strong> which is located in the js directory. The code below shows the include in a html page: </p>
+			<pre class="prettyprint lang-html linenums">
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.circular-countdown.js&quot;&gt;&lt;/script&gt;
+</pre>
+			<p>
+				<span class="note">Note:</span> The css, js files are the compressed production version of the file. If you intend to modify the countdown timer's source code, you will need to look at files in source folder and it is recommended that you minify the modified file afterwards. 
+			</p>
+			<p>In step 3, to specify the tags of the countdown timer itself, refer to the example in the <strong>index.html</strong> file. In that file, you'll see a block of tag starting and ending with: 
+			</p>
+			<pre class="prettyprint lang-html linenums">
+&lt;div class="countdown"&gt;&lt;/div&gt;
+</pre>	
+			<p>You can use this as a template and copy and paste it onto your own page.</p>
+			<p>Finally in step 4, you will need to instantiate a javascript function call to get the countdown timer initialized. The example code looks like this below: </p>
+			<pre class="prettyprint lang-html lang-js linenums">
+&lt;script type=&quot;text/javascript&quot;&gt;
+  $(document).ready(function() {
+    $(&quot;.countdown&quot;).countdownTimer (
+      startDate:"2014/08/01 12:30:00",  //Year/Month/Day Hours:Minutes:Seconds
+      endDate:"2017/12/25 12:30:00",
+      timeZone:0,
+      past:false,
+      
+      //Show-hide day, hour, minute, second
+      showDay:true,
+      showHour:true,
+      showMinute:true,
+      showSecond:true,
+      
+      //Margin between circles
+      margin:10,
+      
+      //Diameters
+      dayDiameter:160,
+      hourDiameter:160,
+      minuteDiameter:160,
+      secondDiameter:160,
+      
+      //Circle BG width
+      dayBgWidth:23,
+      hourBgWidth:23,
+      minuteBgWidth:23,
+      secondBgWidth:23,
+      
+      //Circle width
+      dayCircleWidth:23,
+      hourCircleWidth:23,
+      minuteCircleWidth:23,
+      secondCircleWidth:23,
+      
+      //Circle BG color
+      dayBgColor:"#ccc",
+      hourBgColor:"#ccc",
+      minuteBgColor:"#ccc",
+      secondBgColor:"#ccc",
+      
+      //Circle color
+      dayCircleColor:"#e8065c",
+      hourCircleColor:"#e8065c",
+      minuteCircleColor:"#e8065c",
+      secondCircleColor:"#e8065c",
+      
+      //Counter font size
+      dayCounterFontSize:32,
+      hourCounterFontSize:32,
+      minuteCounterFontSize:32,
+      secondCounterFontSize:32,
+      
+      //Text font size
+      dayTextFontSize:11,
+      hourTextFontSize:11,
+      minuteTextFontSize:11,
+      secondTextFontSize:11,
+      
+      //Counter font color
+      dayCounterFontColor:"#333",
+      hourCounterFontColor:"#333",
+      minuteCounterFontColor:"#333",
+      secondCounterFontColor:"#333",
+      
+      //Text font color
+      dayTextFontColor:"#666",
+      hourTextFontColor:"#666",
+      minuteTextFontColor:"#666",
+      secondTextFontColor:"#666",
+      
+      //Texts
+      dayText:"DAYS",
+      hourText:"HOURS",
+      minuteText:"MINUTES",
+      secondText:"SECONDS",
+      
+      //Texts top margin
+      dayTextMarginTop:0,
+      hourTextMarginTop:0,
+      minuteTextMarginTop:0,
+      secondTextMarginTop:0,
+      
+      //Timer on finish function
+      onFinish:function(){}
+    );
+  });
+&lt;/script&gt;
+</pre>
+			<p>This will instantiate the timer  with the selected time.</p>
+			<p>Also, there is another optional attribute named <strong>past</strong>. If you want to countup the timer from a past time, add it to javascript function like that: , <i>past: true</i></p>
+			
+			<hr />
+			<h3 id="parameter">C) Plugin Parameters</h3>
+			<table>
+				<thead>
+					<tr>
+						<th style="width:20%">Attribute</th>
+						<th style="width:33%">Properties</th>
+						<th style="width:47%">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th><strong>startDate</strong></th>
+						<td><b>string</b></td>
+						<td>
+							Specifies the start date to countdown.<br />
+							Date Format: <strong>Year/Month/Day Hours:Minutes:Seconds</strong>
+						</td>
+					</tr>	
+					<tr>
+						<th><strong>endDate</strong></th>
+						<td><b>string</b></td>
+						<td>
+							Specifies the end date to countdown.<br />
+							Date Format: <strong>Year/Month/Day Hours:Minutes:Seconds</strong>
+						</td>
+					</tr>	
+                    <tr>
+						<th><strong>timeZone</strong></th>
+						<td><b>number</b> - Default: <strong>0</strong></td>
+						<td>
+							Specifies the time zone. GMT number.<br /><a href="http://www.timeanddate.com/time/map/" target="_blank">http://www.timeanddate.com/time/map/</a></strong>
+						</td>
+					</tr>	
+					<tr>
+						<th><strong>past</strong></th>
+						<td><b>boolean</b> - Default: <strong>false</strong></td>
+						<td>
+							Specifies if the timer count-downs or count-ups.
+							Set to <strong>true</strong> or <strong>false</strong>.
+						</td>
+					</tr>
+                    <tr>
+						<th><strong>showDay</strong></th>
+						<td><b>boolean</b> - Default: <strong>true</strong></td>
+						<td>
+							Specifies if the days are visible.
+							Set to <strong>true</strong> or <strong>false</strong>.
+						</td>
+					</tr>
+                    <tr>
+						<th><strong>showHour</strong></th>
+						<td><b>boolean</b> - Default: <strong>true</strong></td>
+						<td>
+							Specifies if the hours are visible.
+							Set to <strong>true</strong> or <strong>false</strong>.
+						</td>
+					</tr>
+                    <tr>
+						<th><strong>showMinute</strong></th>
+						<td><b>boolean</b> - Default: <strong>true</strong></td>
+						<td>
+							Specifies if the minutes are visible.
+							Set to <strong>true</strong> or <strong>false</strong>.
+						</td>
+					</tr>
+                    <tr>
+						<th><strong>showSecond</strong></th>
+						<td><b>boolean</b> - Default: <strong>true</strong></td>
+						<td>
+							Specifies if the seconds are visible.
+							Set to <strong>true</strong> or <strong>false</strong>.
+						</td>
+					</tr>
+					<tr>
+						<th><strong>margin</strong></th>
+						<td><b>number</b> - Default: <strong>10</strong></td>
+						<td>Margin between circles. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>dayDiameter</strong></th>
+						<td><b>number</b> - Default: <strong>160</strong></td>
+						<td>Diameter width-height of the days circle. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>hourDiameter</strong></th>
+						<td><b>number</b> - Default: <strong>160</strong></td>
+						<td>Diameter width-height of the hours circle. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>minuteDiameter</strong></th>
+						<td><b>number</b> - Default: <strong>160</strong></td>
+						<td>Diameter width-height of the minutes circle. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>secondDiameter</strong></th>
+						<td><b>number</b> - Default: <strong>160</strong></td>
+						<td>Diameter width-height of the seconds circle. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>dayBgWidth</strong></th>
+						<td><b>number</b> - Default: <strong>23</strong></td>
+						<td>Days circle background width. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>hourBgWidth</strong></th>
+						<td><b>number</b> - Default: <strong>23</strong></td>
+						<td>Hours circle background width. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>minuteBgWidth</strong></th>
+						<td><b>number</b> - Default: <strong>23</strong></td>
+						<td>Minutes circle background width. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>secondBgWidth</strong></th>
+						<td><b>number</b> - Default: <strong>23</strong></td>
+						<td>Seconds circle background width. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>dayCircleWidth</strong></th>
+						<td><b>number</b> - Default: <strong>23</strong></td>
+						<td>Days circle width. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>hourCircleWidth</strong></th>
+						<td><b>number</b> - Default: <strong>23</strong></td>
+						<td>Hours circle width. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>minuteCircleWidth</strong></th>
+						<td><b>number</b> - Default: <strong>23</strong></td>
+						<td>Minutes circle width. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>secondCircleWidth</strong></th>
+						<td><b>number</b> - Default: <strong>23</strong></td>
+						<td>Seconds circle width. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>dayBgColor</strong></th>
+						<td><b>string</b> - Default: <strong>#ccc</strong></td>
+						<td>Days circle background color. The value is set in RGB.</td>
+					</tr>
+					<tr>
+						<th><strong>hourBgColor</strong></th>
+						<td><b>string</b> - Default: <strong>#ccc</strong></td>
+						<td>Hours circle background color. The value is set in RGB.</td>
+					</tr>
+					<tr>
+						<th><strong>minuteBgColor</strong></th>
+						<td><b>string</b> - Default: <strong>#ccc</strong></td>
+						<td>Minutes circle background color. The value is set in RGB.</td>
+					</tr>
+					<tr>
+						<th><strong>secondBgColor</strong></th>
+						<td><b>string</b> - Default: <strong>#ccc</strong></td>
+						<td>Seconds circle background color. The value is set in RGB.</td>
+					</tr>
+					<tr>
+						<th><strong>dayCircleColor</strong></th>
+						<td><b>string</b> - Default: <strong>#e8065c</strong></td>
+						<td>Days circle color. The value is set in RGB.</td>
+					</tr>
+					<tr>
+						<th><strong>hourCircleColor</strong></th>
+						<td><b>string</b> - Default: <strong>#e8065c</strong></td>
+						<td>Hours circle color. The value is set in RGB.</td>
+					</tr>
+					<tr>
+						<th><strong>minuteCircleColor</strong></th>
+						<td><b>string</b> - Default: <strong>#e8065c</strong></td>
+						<td>Minutes circle color. The value is set in RGB.</td>
+					</tr>
+					<tr>
+						<th><strong>secondCircleColor</strong></th>
+						<td><b>string</b> - Default: <strong>#e8065c</strong></td>
+						<td>Seconds circle color. The value is set in RGB.</td>
+					</tr>
+					<tr>
+						<th><strong>dayCounterFontSize</strong></th>
+						<td><b>number</b> - Default: <strong>32</strong></td>
+						<td>Days counter font size. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>hourCounterFontSize</strong></th>
+						<td><b>number</b> - Default: <strong>32</strong></td>
+						<td>Hours counter font size. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>minuteCounterFontSize</strong></th>
+						<td><b>number</b> - Default: <strong>32</strong></td>
+						<td>Minutes counter font size. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>secondCounterFontSize</strong></th>
+						<td><b>number</b> - Default: <strong>32</strong></td>
+						<td>Seconds counter font size. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>dayTextFontSize</strong></th>
+						<td><b>number</b> - Default: <strong>11</strong></td>
+						<td>Days text font size. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>hourTextFontSize</strong></th>
+						<td><b>number</b> - Default: <strong>11</strong></td>
+						<td>Hours text font size. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>minuteTextFontSize</strong></th>
+						<td><b>number</b> - Default: <strong>11</strong></td>
+						<td>Minutes text font size. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>secondTextFontSize</strong></th>
+						<td><b>number</b> - Default: <strong>11</strong></td>
+						<td>Seconds text font size. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>dayCounterFontColor</strong></th>
+						<td><b>string</b> - Default: <strong>#333</strong></td>
+						<td>Days counter font color. The value is set in RGB.</td>
+					</tr>
+					<tr>
+						<th><strong>hourCounterFontColor</strong></th>
+						<td><b>string</b> - Default: <strong>#333</strong></td>
+						<td>Hours counter font color. The value is set in RGB.</td>
+					</tr>
+					<tr>
+						<th><strong>minuteCounterFontColor</strong></th>
+						<td><b>string</b> - Default: <strong>#333</strong></td>
+						<td>Minutes counter font color. The value is set in RGB.</td>
+					</tr>
+					<tr>
+						<th><strong>secondCounterFontColor</strong></th>
+						<td><b>string</b> - Default: <strong>#333</strong></td>
+						<td>Seconds counter font color. The value is set in RGB.</td>
+					</tr>
+					<tr>
+						<th><strong>dayTextFontColor</strong></th>
+						<td><b>string</b> - Default: <strong>#666</strong></td>
+						<td>Days text font color. The value is set in RGB.</td>
+					</tr>
+					<tr>
+						<th><strong>hourTextFontColor</strong></th>
+						<td><b>string</b> - Default: <strong>#666</strong></td>
+						<td>Hours text font color. The value is set in RGB.</td>
+					</tr>
+					<tr>
+						<th><strong>minuteTextFontColor</strong></th>
+						<td><b>string</b> - Default: <strong>#666</strong></td>
+						<td>Minutes text font color. The value is set in RGB.</td>
+					</tr>
+					<tr>
+						<th><strong>secondTextFontColor</strong></th>
+						<td><b>string</b> - Default: <strong>#666</strong></td>
+						<td>Seconds text font color. The value is set in RGB.</td>
+					</tr>
+					<tr>
+						<th><strong>dayText</strong></th>
+						<td><b>string</b> - Default: <strong>Days</strong></td>
+						<td>
+							Specifies the days text.
+						</td>
+					</tr>	
+					<tr>
+						<th><strong>hourText</strong></th>
+						<td><b>string</b> - Default: <strong>Hours</strong></td>
+						<td>
+							Specifies the hours text.
+						</td>
+					</tr>	
+					<tr>
+						<th><strong>minuteText</strong></th>
+						<td><b>string</b> - Default: <strong>Minutes</strong></td>
+						<td>
+							Specifies the minutes text.
+						</td>
+					</tr>	
+					<tr>
+						<th><strong>secondText</strong></th>
+						<td><b>string</b> - Default: <strong>Seconds</strong></td>
+						<td>
+							Specifies the seconds text.
+						</td>
+					</tr>
+					<tr>
+						<th><strong>dayTextMarginTop</strong></th>
+						<td><b>number</b> - Default: <strong>0</strong></td>
+						<td>Specifies the top margin of days text according to the bottom of circle. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>hourTextMarginTop</strong></th>
+						<td><b>number</b> - Default: <strong>0</strong></td>
+						<td>Specifies the top margin of hours text according to the bottom of circle. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>minuteTextMarginTop</strong></th>
+						<td><b>number</b> - Default: <strong>0</strong></td>
+						<td>Specifies the top margin of minutes text according to the bottom of circle. The value is set in pixels (px).</td>
+					</tr>
+					<tr>
+						<th><strong>secondTextMarginTop</strong></th>
+						<td><b>number</b> - Default: <strong>0</strong></td>
+						<td>Specifies the top margin of seconds text according to the bottom of circle. The value is set in pixels (px).</td>
+					</tr>					
+                    <tr>
+						<th><strong>onFinish</strong></th>
+						<td><b>function</b></td>
+						<td>
+							Executes some scripts when time's up.
+						</td>
+					</tr>	
+                </tbody>
+			</table>
+			
+			<!-- Social profiles -->	
+			<div class="social">
+				<a href="http://twitter.com/flashblue80" target="_blank"><img src="assets/images/social/twitter.png" width="32" height="32" alt="Twitter" title="Twitter" /></a> 
+				<a href="http://www.facebook.com/flashbluedesign" target="_blank"><img src="assets/images/social/facebook.png" width="32" height="32" alt="Facebook" title="Facebook" /></a> 
+				<a href="http://plus.google.com/114361730793593826266" target="_blank"><img src="assets/images/social/google.png" width="32" height="32" alt="Google+" title="Google+" /></a> 
+				<a href="http://www.linkedin.com/in/samiyilmaz80" target="_blank"><img src="assets/images/social/linkedin.png" width="32" height="32" alt="Linkedin" title="Linkedin" /></a> 
+				<a href="http://samiyilmaz.deviantart.com/" target="_blank"><img src="assets/images/social/deviantart.png" width="32" height="32" alt="Deviant Art" title="Deviant Art" /></a> 
+				<a href="http://www.behance.net/flashblue" target="_blank"><img src="assets/images/social/behance.png" width="32" height="32" alt="Behance" title="Behance" /></a> 
+				<a href="http://www.dribbble.com/flashblue" target="_blank"><img src="assets/images/social/dribbble.png" width="32" height="32" alt="Dribbble" title="Dribbble" /></a> 
+				<a href="http://www.flickr.com/photos/flashblue" target="_blank"><img src="assets/images/social/flickr.png" width="32" height="32" alt="Flickr" title="Flickr" /></a> 
+				<a href="http://www.youtube.com/user/flashblue80" target="_blank"><img src="assets/images/social/youtube.png" width="32" height="32" alt="YouTube" title="YouTube" /></a> 
+				<a href="http://www.stumbleupon.com/stumbler/flashblue80" target="_blank"><img src="assets/images/social/stumbleupon.png" width="32" height="32" alt="StumbleUpon" title="StumbleUpon" /></a> 
+				<a href="http://friendfeed.com/samiylmaz" target="_blank"><img src="assets/images/social/friendfeed.png" width="32" height="32" alt="FriendFeed" title="FriendFeed" /></a> 
+				<a href="http://flashblue80.tumblr.com/" target="_blank"><img src="assets/images/social/tumblr.png" width="32" height="32" alt="Tumblr" title="Tumblr" /></a> 
+				<a href="http://www.codegrape.com/feeds/user/flashblue.atom" target="_blank"><img src="assets/images/social/rss.png" width="32" height="32" alt="RSS Feed" title="RSS Feed" /></a> 
+			</div>
+			
+		</div>
+		
+		<!-- Go to top arrow -->
+		<div class="totop">
+		   <div class="gototop">
+				<div class="arrowgototop"></div>
+		   </div>
+	  	</div>
+		
+	</body>
+</html>

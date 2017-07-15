@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+		<title>Circular Countdown jQuery Plugin</title>
+		
+		<link rel="shortcut icon" href="images/preview/favicon.ico" />
+		
+		<!-- CSS style -->
+		<link rel="stylesheet" type="text/css" href="css/preview.css" />
+		
+		<!-- Google fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600' rel='stylesheet' type='text/css'>
+		
+		<!-- jQuery -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+		
+		<!--[if lt IE 9]>
+			<script type="text/javascript">
+				document.createElement("header");       
+				document.createElement("nav");
+			</script>
+		<![endif]-->
+		
+		<!-- Circular Countdown CSS settings -->
+		<link rel="stylesheet" type="text/css" href="css/circular-countdown.css" />
+		
+		<!-- Circular Countdown JS -->
+		<script type="text/javascript" src="js/jquery.circular-countdown.js"></script>
+		
+		<!-- Create Circular Countdown Timer -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".countdown").circularCountdown({
+					startDate:"2014/08/01 12:30:00",
+					endDate:"2016/12/25 12:30:00",
+					timeZone:-5,	//Time zone of New York. Find timezone of your location and write here.
+					
+					//Margin between circles
+					margin:15,
+					
+					//Diameters
+					dayDiameter:188,
+					hourDiameter:188,
+					minuteDiameter:188,
+					secondDiameter:188,
+					
+					//Circle BG width
+					dayBgWidth:17,
+					hourBgWidth:17,
+					minuteBgWidth:17,
+					secondBgWidth:17,
+					
+					//Circle width
+					dayCircleWidth:17,
+					hourCircleWidth:17,
+					minuteCircleWidth:17,
+					secondCircleWidth:17,
+					
+					//Circle color
+					dayCircleColor:"#ff6565",
+					hourCircleColor:"#378cff",
+					minuteCircleColor:"#9cdb7d",
+					secondCircleColor:"#ffdc50",
+					
+					//Counter font size
+					dayCounterFontSize:48,
+					hourCounterFontSize:48,
+					minuteCounterFontSize:48,
+					secondCounterFontSize:48,
+					
+					//Text font size
+					dayTextFontSize:12,
+					hourTextFontSize:12,
+					minuteTextFontSize:12,
+					secondTextFontSize:12,
+					
+					//Counter font color
+					dayCounterFontColor:"#fff",
+					hourCounterFontColor:"#fff",
+					minuteCounterFontColor:"#fff",
+					secondCounterFontColor:"#fff",
+					
+					//Text font color
+					dayTextFontColor:"#ff6565",
+					hourTextFontColor:"#378cff",
+					minuteTextFontColor:"#9cdb7d",
+					secondTextFontColor:"#ffdc50"
+				});
+			});
+		</script>	
+	</head>
+
+	<body>
+	
+		<!-- Border -->
+		<div class="gray-border"></div>
+		<div class="pink-border"></div>
+	
+		<!-- Header -->
+		<header>			
+			<div class="container clearfix">
+				<div class="logo"><img src="images/preview/logo.png" /></div>				
+				<nav class="menu">
+					<ul>
+						<li><a href="index.html">PINK</a></li>
+						<li><a href="blue.html">BLUE</a></li>
+						<li class="active"><a href="multicolor.html">MULTICOLOR</a></li>
+						<li><a href="multisize.html">MULTISIZE</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		
+		<!-- Preview -->
+		<div class="dark-wrapper multicolor">
+			<div class="inner clearfix">
+				
+				<!--
+				############################################
+				    - Circular Countdown jQuery Plugin -
+				############################################
+				-->
+                <div class="countdown"></div>
+										
+			</div>
+		</div>
+		
+		<!-- Features -->
+		<div class="light-wrapper"> 
+			<div class="inner clearfix">
+				<a name="features"></a>
+				<h2>FEATURES</h2>
+				
+				<div class="one_third">
+					<ul>
+						<li><b>Responsive design </b></li>
+						<li>Options are configurable via JavaScript</li>
+						<li>You can change timer type to <b> countdown </b> or <b> countup </b></li>
+						<li>Supports <b>client-side</b> or <b>server-side</b> (unix timestamp) time</li>
+						<li>Simple and clean interface</li>
+					</ul>
+				</div>
+				
+				<div class="one_third">
+					<ul>
+						<li><b>Resizable</b> width, height, font size and circles thickness</li>
+						<li>Easy <b>font</b> and <b>color</b> change from the plugin options</li>
+						<li><b>Show or hide</b> days, hours, minutes or seconds</li>
+						<li><b>Texts</b> can be changed via parameters</li>
+						<li>Supports <b>multiple instances</b></li>			
+					</ul>
+				</div>
+				
+				<div class="one_third last">
+					<ul>
+						<li>Uses HTML5 <b>Canvas</b></li>
+						<li>Works in <b> IE, Firefox, Safari, Opera, Chrome </b></li>	
+						<li>IE7 and 8 doesn't support canvas, but the plugin still works and displays the time remaining</li>
+						<li><b>Callback function</b> support after the counting finishes</li>
+						<li>Help file is included</li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+		
+		<p>&nbsp;</p>
+	
+	</body>
+	
+</html>

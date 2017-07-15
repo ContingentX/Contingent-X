@@ -1,0 +1,86 @@
+/*tot*/
+.styled.die div#c {
+    color: rgba(154, 154, 154, 0.48);
+    text-shadow: 0px 0px 6px rgba(58, 58, 58, 0.73);
+    /*font-size: 3em;*/
+}
+
+.styled.die div#c span {
+    color: rgba(105, 105, 105, 0.49);
+    border-top: none;
+    text-shadow: none;
+}
+
+
+
+@media (min-width: 300px) {
+    .styled.die div#c {
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 600px) {
+    .styled.die div#c {
+        /*font-size: 70px;*/
+    }
+}
+
+.styled {
+    padding: 50px;
+}
+
+.styled div#c {
+    /*font-family: "Segment7Standard";*/
+    color: #ffffff;
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.31);
+    /*font-size: 70px;*/
+}
+
+.styled div#c span {
+    color: #ffffff;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.21);
+}
+
+.styled div {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 25px;
+    font-weight: 100;
+    line-height: 1;
+    text-align: right;
+}
+
+/* IE7 inline-block hack */
+* + html .styled div {
+    display: inline;
+    zoom: 1;
+}
+
+.styled div:first-child {
+    margin-left: 0;
+}
+
+.styled div span {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    border-top: 1px solid #cecece;
+    padding-top: 3px;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.info {
+    display: none;
+}
+
+.info.info-one {
+    display: block;
+    color: #fff;
+    padding: 12px;
+    background: #5A2F69;
+    margin-top: -10px;
+    text-align: center;
+}

@@ -1,0 +1,165 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--webapp in fullscreen-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <meta name="application-name" content="ContingentX">
+    <meta name="msapplication-TileColor" content="#090510">
+    <meta name="msapplication-TileImage" content="/app/assets/img/favicon/mstile-144x144.png">
+    <meta name="msapplication-config" content="/app/assets/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#090510">
+
+    <title>ContingentX</title>
+
+    <link rel="icon" href="/app/assets/img/favicon/favicon.ico">
+    <!-- UIKIT CSS -->
+    <link href="/app/assets/css/uikit.css" rel="stylesheet">
+    <link href="/app/assets/css/components/form-password.min.css" rel="stylesheet">
+
+
+    <style>
+        body, html {
+            background: #090510;
+            outline: 0 !important; /*kein blau auf android*/
+        }
+
+        .uk-button-login {
+            min-height: 40px;
+            padding: 0 15px;
+            line-height: 40px;
+            font-size: 16px;
+            border-radius: 16px 1px;
+            text-align: center;
+            outline: 0 !important; /*kein blau auf android*/
+
+            color: rgba(203, 185, 232, 0.64);
+            text-shadow: -1px 1px 40px #AE6CD8;
+            background: url('/app/assets/img/riffed.png') rgba(106, 18, 142, 0.31);
+            border: 1px solid rgba(169, 0, 255, 0.52);
+            box-shadow: 0 0 9px rgba(95, 7, 202, 0.95);
+        }
+
+        .uk-button-login:active,
+        .uk-button-login:hover {
+            color: rgba(224, 195, 232, 0.85);
+            text-shadow: -1px 1px 13px rgba(251, 0, 255, 0.92);
+            background: url('/app/assets/img/riffed.png') rgba(52, 4, 72, 0.78);
+            border: 1px solid rgba(145, 0, 255, 0.91);
+            box-shadow: 0 0 23px rgba(255, 0, 224, 0.74);
+            outline: 0 !important; /*kein blau auf android*/
+        }
+
+        .inp {
+            border-radius: 3px !important;
+            background: #070707 !important;
+            color: rgba(208, 167, 224, 0.85) !important;
+            text-shadow: 0 0 10px rgba(3, 131, 255, 0.89) !important;
+            border: 1px solid rgba(169, 0, 255, 0.52) !important;
+            box-shadow: 0 0 9px rgba(108, 6, 202, 0.95) !important;
+            outline: 0 !important; /*kein blau auf android*/
+        }
+
+        .inp:focus,
+        .inp:active,
+        .inp:hover {
+            border-radius: 3px !important;
+            text-shadow: -1px 1px 13px rgba(251, 0, 255, 0.92) !important;
+            background: rgb(23, 2, 38) !important;
+            outline: 0 !important; /*kein blau auf android*/
+            border: 1px solid rgba(145, 0, 255, 0.91) !important;
+            box-shadow: 0 0 23px rgba(255, 0, 224, 0.74) !important;
+        }
+        i.uk-icon-eye {
+            color: rgba(152, 210, 205, 0.77);
+            text-shadow: 0 0 9px #e40ab5;
+            background: url('/app/assets/img/riffed.png') rgba(79, 8, 109, 0.45);
+            border-left: 1px solid rgba(119, 11, 160, 0.52);
+            outline: 0 !important; /*kein blau auf android*/
+            padding: 13px;
+            margin-top: -13px;
+            margin-right: -9px;
+            border-radius: 0 2px 2px 0;
+        }
+        i.uk-icon-eye-slash {
+            color: rgba(171, 185, 220, 0.75);
+            text-shadow: 0px 0px 8px rgba(230, 69, 203, 0.91);
+            background: url('/app/assets/img/riffed.png') rgba(64, 1, 80, 0.78);
+            border: 1px solid rgba(145, 0, 255, 0.91);
+            box-shadow: 0 0 17px rgba(160, 15, 156, 0.77);
+            outline: 0 !important; /*kein blau auf android*/
+            padding: 12.5px;
+            margin-top: -14px;
+            margin-right: -9px;
+            border-radius: 0 2px 2px 0;
+        }
+        a {
+            outline: 0 !important;
+        }
+    </style>
+</head>
+<body style="background: #090510;">
+<div class="uk-text-center uk-animation-fade">
+    <p>
+        <img class="uk-align-center uk-responsive-height uk-animation-scale-up "
+             style=""
+             src="/app/assets/img/login.png"/>
+    </p>
+
+    <!--info die-->
+    <div class="uk-container uk-container-center" style="max-width: 256px; ">
+        <div class="uk-grid">
+            <div class="uk-width-1-1">
+                <form class="uk-form"
+                      method="POST" action="/authenticate">
+                    <div class="uk-form-row uk-animation-scale-down ">
+                        <input class="inp uk-width-1-1 uk-form-large"
+                               style="outline: 0;"
+                               type="text"
+                               id="inputEmail"
+                               name="username"
+                               placeholder="E-Mail">
+                    </div>
+
+                    <div class="uk-form-row uk-form-password uk-animation-scale-down">
+                        <input class="inp uk-width-1-1 uk-form-large"
+                               style="outline: 0;"
+                               type="password"
+                               id="inputPassword"
+                               name="password"
+                               placeholder="Passwort">
+                        <a href=""
+                           class="uk-form-password-toggle"
+                           style="outline: 0;"
+                           data-uk-form-password="{lblShow:'<i class=uk-icon-eye></i>', lblHide:'<i class=uk-icon-eye-slash></i>'}">
+                            <i style="outline: 0;" class="uk-icon-eye"></i>
+                        </a>
+                    </div>
+
+                    <div class="uk-form-row uk-animation-slide-bottom uk-animation-bottom-center">
+                        <button class="uk-width-1-1 uk-button-login uk-button-large"
+                                type="submit">Anmelden
+                        </button>
+                    </div>
+
+
+                    <div class="uk-form-row uk-animation-fade uk-animation-15">
+                        <p style="margin-top: 160px; margin-right: -5px;">
+                            Copyright &copy; 2016, <br>Design & Developed by <br>Michael Kaufmann
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/app/assets/cache/jquery.min.2.2.0.js"></script>
+<script src="/app/assets/js/uikit.min.js"></script>
+<script src="/app/assets/js/components/form-password.min.js"></script>
+</body>
+</html>
